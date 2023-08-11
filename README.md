@@ -20,19 +20,19 @@ Only do what you are comfortable with. A credit card is needed to use Digital Oc
 
 Part I: Create an Ubuntu Virtual Machine
 
-- Download and install vmplayer (free) https://kb.vmware.com/s/article/2053973
-- Download Ubuntu Dekstop ISO file (free) https://ubuntu.com/download/desktop
+- Download and install vmplayer https://kb.vmware.com/s/article/2053973
+- Download Ubuntu Dekstop ISO file https://ubuntu.com/download/desktop
 
 - Create VM: https://youtu.be/9rUhGWijf9U?t=134
 
-***configurations and installations will vary depending what machine you have***
+*configurations and installations will vary depending what machine you have*
 
 - Test and confirm machine can run
 
 Noe: always good practice to run a
-$ sudo apt-get update 
+'$ sudo apt-get update'
 and 
-$ sudo apt-get upgrade
+'$ sudo apt-get upgrade'
 
 
 ****************************************************************************************
@@ -54,9 +54,9 @@ https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/openssh/
 https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/to-existing-droplet/
 
 Additional reading:
-https://blog.invgate.com/what-are-ssh-keys#:~:text=An%20SSH%20key%20is%20used,encrypted%20using%20the%20public%20key.
+- https://blog.invgate.com/what-are-ssh-keys#:~:text=An%20SSH%20key%20is%20used,encrypted%20using%20the%20public%20key.
 
-(https://www.simplilearn.com/tutorials/cryptography-tutorial/aes-encryption)
+- https://www.simplilearn.com/tutorials/cryptography-tutorial/aes-encryption
 
 ****************************************************************************************
 
@@ -72,22 +72,23 @@ Part IV: Deploy a python app
 
 - install pip and flask dependencies:
 
-Install:$ sudo apt-get install python3 python3-pip python3-venv
+'$ sudo apt-get install python3 python3-pip python3-venv'
+'$pip install Flask'
 
-**most likely pyhon 3 is already installed** 
+*most likely pyhon3 is already installed* 
 
 for flask app from myapp run
-$ export FLASK_APP=app.py 
-$ flask run 
+'$ export FLASK_APP=app.py' 
+'$ flask run' 
 
 if when running flask it gets a used port: https://stackoverflow.com/questions/41150975/how-to-display-list-of-running-processes-python
 identify the taks with: 
-$ ps -ef | grep python
+'$ ps -ef | grep python'
 find the flask taks then kill with"
-$ sudo kill -9 [task#] 
+'$ sudo kill -9 [task#]' 
 
 - test running app on local machine
-**we use the app service instead of the droplet to go serverless. If we wan to build it on the droplet it will require more work: https://tecadmin.net/deploying-flask-application-on-ubuntu-apache-wsgi/ **
+we use the app service instead of the droplet to go serverless. If we wan to build it on the droplet it will require more work: https://tecadmin.net/deploying-flask-application-on-ubuntu-apache-wsgi/ *
 
 - deploy on digital ocean apps with gunicorn https://docs.digitalocean.com/tutorials/app-deploy-flask-app/
 
