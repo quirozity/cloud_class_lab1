@@ -54,8 +54,11 @@ Part III: Connect to Droplet passwordless with SSH keys
   `usermod -aG sudo [user]`
   
 - On local machine create ssh keys to access remotely with openssh and share ssh keys prior to that ensure OpenSSH is allowed:
+  `ufw enable`
+  `ufw status`
   `ufw allow OpenSSH`
 https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/openssh/
+
 https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/to-existing-droplet/
 
 Additional reading:
