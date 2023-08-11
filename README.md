@@ -30,9 +30,9 @@ Part I: Create an Ubuntu Virtual Machine
 - Test and confirm machine can run
 
 Noe: always good practice to run a
-'$ sudo apt-get update'
+`$ sudo apt-get update`
 and 
-'$ sudo apt-get upgrade'
+`$ sudo apt-get upgrade`
 
 
 ****************************************************************************************
@@ -49,7 +49,12 @@ Part III: Connect to Droplet passwordless with SSH keys
 
 - Initial server setup to create new user and set firewall: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04
 
-- On local machine create ssh keys to access remotely with openssh and share ssh keys
+- Add user with admin privileges
+  `adduser [user]`
+  `usermod -aG sudo [user]`
+  
+- On local machine create ssh keys to access remotely with openssh and share ssh keys prior to that ensure OpenSSH is allowed:
+  `ufw allow OpenSSH`
 https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/openssh/
 https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/to-existing-droplet/
 
@@ -72,23 +77,24 @@ Part IV: Deploy a python app
 
 - install pip and flask dependencies:
 
-'$ sudo apt-get install python3 python3-pip python3-venv'
-'$pip install Flask'
+`$ sudo apt-get install python3 python3-pip python3-venv`
+`$pip install Flask`
 
 *most likely pyhon3 is already installed* 
 
 for flask app from myapp run
-'$ export FLASK_APP=app.py' 
-'$ flask run' 
+`$ export FLASK_APP=app.py`
+`$ flask run`
 
 if when running flask it gets a used port: https://stackoverflow.com/questions/41150975/how-to-display-list-of-running-processes-python
 identify the taks with: 
-'$ ps -ef | grep python'
+`$ ps -ef | grep python`
 find the flask taks then kill with"
-'$ sudo kill -9 [task#]' 
+`$ sudo kill -9 [task#]` 
 
 - test running app on local machine
-we use the app service instead of the droplet to go serverless. If we wan to build it on the droplet it will require more work: https://tecadmin.net/deploying-flask-application-on-ubuntu-apache-wsgi/ *
+- 
+*we will se the app service instead of the droplet to go serverless. If we wan to build it on the droplet it will require more work: https://tecadmin.net/deploying-flask-application-on-ubuntu-apache-wsgi/ *
 
 - deploy on digital ocean apps with gunicorn https://docs.digitalocean.com/tutorials/app-deploy-flask-app/
 
