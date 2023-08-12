@@ -18,7 +18,7 @@ Only do what you are comfortable with. A credit card is needed to use Digital Oc
 
 ****************************************************************************************
 
-Part I: Create an Ubuntu Virtual Machine
+# Part I: Create an Ubuntu Virtual Machine
 
 - Download and install vmplayer https://kb.vmware.com/s/article/2053973
 - Download Ubuntu Dekstop ISO file https://ubuntu.com/download/desktop
@@ -37,7 +37,7 @@ and
 
 ****************************************************************************************
 
-Part II: Create a Digital Ocean Droplet
+# Part II: Create a Digital Ocean Droplet
 
 - create a digital ocean account: https://cloud.digitalocean.com/registrations/new
 
@@ -45,7 +45,7 @@ Part II: Create a Digital Ocean Droplet
 
 ****************************************************************************************
 
-Part III: Connect to Droplet passwordless with SSH keys
+# Part III: Connect to Droplet passwordless with SSH keys
 
 - Initial server setup to create new user and set firewall: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04
 
@@ -68,7 +68,9 @@ Additional reading:
 
 ****************************************************************************************
 
-Part IV: Deploy a python app
+# Part IV: Deploy a python app
+
+#Build locally on a machine first to test off cloud
 
 - create a directory called myapp:https://linuxize.com/post/how-to-create-directories-in-linux-with-the-mkdir-command/
 
@@ -96,14 +98,18 @@ find the flask taks then kill with"
 `$ sudo kill -9 [task#]` 
 
 - test running app on local machine
-- 
-*we will se the app service instead of the droplet to go serverless. If we wan to build it on the droplet it will require more work: https://tecadmin.net/deploying-flask-application-on-ubuntu-apache-wsgi/ *
+
+# Build app on cloud
+ 
+ * we will anndon the droplet and use the app service instead of the droplet to go serverless. If we wan to build it on the droplet it will require more work: https://tecadmin.net/deploying-flask-application-on-ubuntu-apache-wsgi/ *
 
 - deploy on digital ocean apps with gunicorn https://docs.digitalocean.com/tutorials/app-deploy-flask-app/
+- Try deploying the ccs quiz app: https://github.com/quirozity/quizapp1.git
+- Remember to update the run command with `gunicorn --worker-tmp-dir /dev/shm app:app`
 
 ****************************************************************************************
 
-Part V: Play
+# Part V: Play
 
 Review Digital Ocean's Cloud Guide and try any one of their demos: https://www.digitalocean.com/community/tutorial-series/getting-started-with-cloud-computing
 
