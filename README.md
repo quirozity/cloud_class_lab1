@@ -70,7 +70,7 @@ Additional reading:
 
 # Part IV: Deploy a python app
 
-# Build locally on to test off cloud
+# Build locally to test off cloud
 
 - create a directory called myapp:https://linuxize.com/post/how-to-create-directories-in-linux-with-the-mkdir-command/
 
