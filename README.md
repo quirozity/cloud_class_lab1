@@ -104,6 +104,7 @@ find the flask taks then kill with"
  * we will anndon the droplet and use the app service instead of the droplet to go serverless. If we wan to build it on the droplet it will require more work: https://tecadmin.net/deploying-flask-application-on-ubuntu-apache-wsgi/ *
 
 - deploy on digital ocean apps with gunicorn https://docs.digitalocean.com/tutorials/app-deploy-flask-app/
+- https://docs.digitalocean.com/products/app-platform/how-to/create-apps/
 - Try deploying the ccs quiz app: https://github.com/quirozity/quizapp1.git
 - Remember to update the run command with `gunicorn --worker-tmp-dir /dev/shm app:app`
 
